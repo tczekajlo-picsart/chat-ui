@@ -39,7 +39,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ghcr.io/huggingface/chat-ui-db
+            ghcr.io/tczekajlo-picsart/chat-ui-db
           tags: |
             type=raw,value=${{ steps.package-version.outputs.VERSION }},enable=${{github.event_name == 'release'}}
             type=raw,value=${{ steps.package-version.outputs.MAJOR }},enable=${{github.event_name == 'release'}}
@@ -99,7 +99,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ghcr.io/huggingface/chat-ui
+            ghcr.io/tczekajlo-picsart/chat-ui
           tags: |
             type=raw,value=${{ steps.package-version.outputs.VERSION }},enable=${{github.event_name == 'release'}}
             type=raw,value=${{ steps.package-version.outputs.MAJOR }},enable=${{github.event_name == 'release'}}
