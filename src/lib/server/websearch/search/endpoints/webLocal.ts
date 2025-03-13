@@ -8,7 +8,12 @@ export default async function searchWebLocal(query: string): Promise<WebSearchSo
 
 	const htmlString = await fetch(
 		"https://www.google.com/search?hl=en&q=" + encodeURIComponent(query),
-		{ signal: abortController.signal }
+		{
+			signal: abortController.signal,
+			headers: {
+				"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Safari/605.1.15"
+			}
+		}
 	)
 		.then((response) => response.text())
 		.catch();
